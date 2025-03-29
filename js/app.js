@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const foodItem = document.createElement('div');
             foodItem.className = 'col-md-4 col-lg-3';
             foodItem.innerHTML = `
-                <div class="food-item" data-food-id="${food.id}">
+                <div class="food-item" data-food-id="${food.id}" data-food-category="${food.category}">
                     <img src="${food.image}" alt="${food.name}" class="food-image">
                     <div class="food-info">
                         <h3 class="food-name">${food.name}</h3>
@@ -119,14 +119,34 @@ document.addEventListener('DOMContentLoaded', () => {
         
         modalTitle.textContent = food.name;
         
-        // Create nutrient table
+        // Create nutrient table with appropriate units
         let nutrientHtml = '';
         for (const [key, value] of Object.entries(food.nutrients)) {
             if (value > 0) {
+                // Get the appropriate unit for each nutrient type
+                let unitDisplay = '';
+                
+                // Macronutrients in grams
+                if (['protein', 'carbs', 'fat', 'fiber', 'omega3'].includes(key)) {
+                    unitDisplay = `${value}g`;
+                } 
+                // Vitamins and minerals as % of daily value
+                else if (['vitaminA', 'vitaminC', 'vitaminD', 'vitaminE', 'calcium', 'iron', 'potassium', 'magnesium'].includes(key)) {
+                    unitDisplay = `${value}% DV`;
+                } 
+                // Antioxidants on a 0-10 scale
+                else if (key === 'antioxidants') {
+                    unitDisplay = `${value}/10`;
+                }
+                // Default fallback
+                else {
+                    unitDisplay = value;
+                }
+                
                 nutrientHtml += `
                     <tr>
                         <td>${game.formatNutrientName(key)}</td>
-                        <td>${value}</td>
+                        <td>${unitDisplay}</td>
                     </tr>
                 `;
             }
@@ -141,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <thead>
                     <tr>
                         <th>Nutrient</th>
-                        <th>Value</th>
+                        <th>Value (per 100g serving)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -151,7 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         
         // Update add to meal button
-        const isAlreadySelected = game.selectedFoods.some(f => f.id === food.id);
+        // Check both ID and category to properly identify selected foods across categories
+        const isAlreadySelected = game.selectedFoods.some(f => f.id === food.id && f.category === food.category);
         const isFull = game.selectedFoods.length >= game.maxSelections;
         
         addToMealButton.disabled = isAlreadySelected || isFull;
@@ -184,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const foodElement = document.createElement('div');
         foodElement.className = 'selected-food-item';
         foodElement.dataset.foodId = food.id;
+        foodElement.dataset.foodCategory = food.category;
         
         foodElement.innerHTML = `
             <img src="${food.image}" alt="${food.name}" class="selected-food-image">
@@ -198,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Add event listener to remove button
         const removeBtn = foodElement.querySelector('.remove-food');
-        removeBtn.addEventListener('click', () => removeFoodFromMeal(food.id));
+        removeBtn.addEventListener('click', () => removeFoodFromMeal(food.id, food.category));
         
         selectedFoodsContainer.appendChild(foodElement);
     }
@@ -208,7 +230,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {Object} food - The food object to add
      */
     function addFoodToMeal(food) {
+        console.log('Attempting to add food:', food.name, food.category, food.id);
+        console.log('Current selections:', game.selectedFoods.length);
+        
         if (game.addFood(food)) {
+            console.log('Food added successfully');
             // Add food to UI
             addFoodToUI(food);
             
@@ -217,18 +243,29 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Add selection badge to food items
             updateFoodItemsSelection();
+        } else {
+            console.log('Failed to add food');
         }
     }
     
     /**
      * Remove a food from the meal selection
      * @param {Number} foodId - The ID of the food to remove
+     * @param {String} category - The category of the food (optional)
      */
-    function removeFoodFromMeal(foodId) {
-        game.removeFood(foodId);
+    function removeFoodFromMeal(foodId, category) {
+        // Use the improved removeFood method with category information
+        game.removeFood(foodId, category);
         
         // Remove the food element from the selection container
-        const foodElement = selectedFoodsContainer.querySelector(`[data-food-id="${foodId}"]`);
+        // If category is provided, use a more specific selector
+        let foodElement;
+        if (category) {
+            foodElement = selectedFoodsContainer.querySelector(`[data-food-id="${foodId}"][data-food-category="${category}"]`);
+        } else {
+            foodElement = selectedFoodsContainer.querySelector(`[data-food-id="${foodId}"]`);
+        }
+        
         if (foodElement) {
             selectedFoodsContainer.removeChild(foodElement);
         }
@@ -263,13 +300,21 @@ document.addEventListener('DOMContentLoaded', () => {
      * Update the selection badges on food items
      */
     function updateFoodItemsSelection() {
-        // Remove all selection badges
+        // Remove all selection badges and 'selected' class
         document.querySelectorAll('.selection-badge').forEach(badge => badge.remove());
+        document.querySelectorAll('.food-item.selected').forEach(item => {
+            item.classList.remove('selected');
+        });
         
         // Add badges to selected foods
         game.selectedFoods.forEach((food, index) => {
-            const foodItems = document.querySelectorAll(`.food-item[data-food-id="${food.id}"]`);
+            // Create a composite selector that uniquely identifies each food
+            // This ensures we don't select foods with the same ID in different categories
+            const uniqueSelector = `.food-item[data-food-id="${food.id}"][data-food-category="${food.category}"]`;
+            const foodItems = document.querySelectorAll(uniqueSelector);
+            
             foodItems.forEach(item => {
+                // Create a new badge each time to avoid duplicates
                 const badge = document.createElement('div');
                 badge.className = 'selection-badge';
                 badge.textContent = index + 1;

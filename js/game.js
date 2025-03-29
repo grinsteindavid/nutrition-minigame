@@ -66,8 +66,8 @@ class NutritionGame {
             return false;
         }
         
-        // Check if food is already selected
-        if (this.selectedFoods.some(f => f.id === food.id)) {
+        // Check if food is already selected - must match both ID AND category
+        if (this.selectedFoods.some(f => f.id === food.id && f.category === food.category)) {
             return false;
         }
         
@@ -78,9 +78,16 @@ class NutritionGame {
     /**
      * Remove a food from the selected foods list
      * @param {Number} foodId - ID of food to remove
+     * @param {String} category - Category of food to remove (optional)
      */
-    removeFood(foodId) {
-        this.selectedFoods = this.selectedFoods.filter(food => food.id !== foodId);
+    removeFood(foodId, category) {
+        if (category) {
+            // If a category is provided, remove only the food with matching ID AND category
+            this.selectedFoods = this.selectedFoods.filter(food => !(food.id === foodId && food.category === category));
+        } else {
+            // Backward compatibility: remove all foods with this ID (old behavior)
+            this.selectedFoods = this.selectedFoods.filter(food => food.id !== foodId);
+        }
     }
 
     /**
