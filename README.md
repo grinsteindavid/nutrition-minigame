@@ -1,4 +1,8 @@
-# Nutrition Minigame Website
+# Live Demo
+
+Check out the live demo of NutriChoice: [Play NutriChoice](https://grinsteindavid.github.io/nutrition-minigame/)
+
+# NutriChoice - Food Nutrition Minigame
 
 An interactive web application that educates users about nutrition through an engaging food selection game.
 
@@ -24,4 +28,5 @@ An interactive web application that educates users about nutrition through an en
 - CSS3 (with Bootstrap 5)
 - JavaScript
 - Chart.js for visualizations
-# nutrition-minigame
+
+
