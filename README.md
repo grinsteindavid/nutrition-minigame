@@ -1,5 +1,8 @@
 # Live Demo
 
+<img width="496" alt="image" src="https://github.com/user-attachments/assets/6769e2f4-c365-45ef-a2e8-3868c58bef2d" />
+
+
 Check out the live demo of NutriChoice: [<span style="background-color: #4CAF50; color: white; padding: 4px 8px; border-radius: 4px;">Play NutriChoice</span>](https://grinsteindavid.github.io/nutrition-minigame/)
 
 # NutriChoice - Food Nutrition Minigame
