@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareButton = document.getElementById('shareButton');
     const addToMealButton = document.getElementById('addToMealButton');
     
+    // Check for shared meal parameters in the URL
+    checkSharedMealParameters();
+    
     // Initialize the UI
     initializeUI();
     
@@ -61,9 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Populate category-specific grids
         const categories = ['fruits', 'vegetables', 'proteins', 'grains', 'dairy'];
+        const singularMap = {
+            'fruits': 'fruit',
+            'vegetables': 'vegetable',
+            'proteins': 'protein',
+            'grains': 'grain',
+            'dairy': 'dairy'  // dairy is already singular in our database
+        };
+        
         categories.forEach(category => {
             const grid = document.getElementById(`${category}Grid`);
-            const filteredFoods = foodData.filter(food => food.category === category.substring(0, category.length - 1));
+            const filteredFoods = foodData.filter(food => food.category === singularMap[category]);
             populateGrid(grid, filteredFoods);
         });
     }
@@ -159,38 +170,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /**
+     * Helper function to add a food to the UI
+     * @param {Object} food - The food object to add to the UI
+     */
+    function addFoodToUI(food) {
+        // Remove the empty selection message if it exists
+        const emptySelection = selectedFoodsContainer.querySelector('.empty-selection');
+        if (emptySelection) {
+            selectedFoodsContainer.removeChild(emptySelection);
+        }
+        
+        // Create food selection item
+        const foodElement = document.createElement('div');
+        foodElement.className = 'selected-food-item';
+        foodElement.dataset.foodId = food.id;
+        
+        foodElement.innerHTML = `
+            <img src="${food.image}" alt="${food.name}" class="selected-food-image">
+            <div class="selected-food-info">
+                <h4 class="selected-food-name">${food.name}</h4>
+                <span class="selected-food-category">${food.category.charAt(0).toUpperCase() + food.category.slice(1)}</span>
+            </div>
+            <button class="remove-food" aria-label="Remove ${food.name}">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        // Add event listener to remove button
+        const removeBtn = foodElement.querySelector('.remove-food');
+        removeBtn.addEventListener('click', () => removeFoodFromMeal(food.id));
+        
+        selectedFoodsContainer.appendChild(foodElement);
+    }
+
+    /**
      * Add a food to the meal selection
      * @param {Object} food - The food object to add
      */
     function addFoodToMeal(food) {
         if (game.addFood(food)) {
-            // Remove the empty selection message if it exists
-            const emptySelection = selectedFoodsContainer.querySelector('.empty-selection');
-            if (emptySelection) {
-                selectedFoodsContainer.removeChild(emptySelection);
-            }
-            
-            // Create food selection item
-            const foodElement = document.createElement('div');
-            foodElement.className = 'selected-food-item';
-            foodElement.dataset.foodId = food.id;
-            
-            foodElement.innerHTML = `
-                <img src="${food.image}" alt="${food.name}" class="selected-food-image">
-                <div class="selected-food-info">
-                    <h4 class="selected-food-name">${food.name}</h4>
-                    <span class="selected-food-category">${food.category.charAt(0).toUpperCase() + food.category.slice(1)}</span>
-                </div>
-                <button class="remove-food" aria-label="Remove ${food.name}">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            
-            // Add event listener to remove button
-            const removeBtn = foodElement.querySelector('.remove-food');
-            removeBtn.addEventListener('click', () => removeFoodFromMeal(food.id));
-            
-            selectedFoodsContainer.appendChild(foodElement);
+            // Add food to UI
+            addFoodToUI(food);
             
             // Update selection count and analyze button
             updateSelectionCount();
@@ -408,17 +428,74 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     /**
+     * Check for shared meal parameters in the URL and load them if present
+     */
+    function checkSharedMealParameters() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const foodsParam = urlParams.get('foods');
+        
+        // If no foods parameter is present, do nothing
+        if (!foodsParam) return;
+        
+        // Parse the food IDs from the URL parameter
+        const foodIds = foodsParam.split(',').map(id => parseInt(id));
+        
+        // Find the matching food objects
+        const sharedFoods = foodIds.map(id => foodData.find(food => food.id === id)).filter(food => food);
+        
+        // If we have valid foods, load them
+        if (sharedFoods.length > 0) {
+            // Start the game to show the game area
+            startGame();
+            
+            // Add each food to the meal
+            sharedFoods.forEach(food => {
+                if (game.addFood(food)) {
+                    addFoodToUI(food);
+                }
+            });
+            
+            // Update UI to reflect selected foods
+            updateSelectionCount();
+            updateFoodItemsSelection();
+            
+            // If we have a full meal selection, show the analysis
+            if (game.selectedFoods.length === game.maxSelections) {
+                analyzeMeal();
+            }
+        }
+    }
+    
+    /**
      * Share the meal results
      */
     function shareMeal() {
+        // Get the nutrition score from the game
+        const scoreResult = game.calculateScore();
+        const score = Math.round(scoreResult.score);
+        
+        // Create a URL with food IDs as parameters
+        const foodIds = game.selectedFoods.map(food => food.id).join(',');
+        const shareUrl = new URL(window.location.href);
+        shareUrl.search = '';  // Clear existing query parameters
+        
+        // Add food IDs and score as query parameters
+        shareUrl.searchParams.append('foods', foodIds);
+        shareUrl.searchParams.append('score', score);
+        
+        // Update share score in the modal
+        document.getElementById('shareScore').textContent = score;
+        
+        // Update share link input
+        const shareLinkInput = document.getElementById('shareLink');
+        shareLinkInput.value = shareUrl.toString();
+        
         // Show the share modal
         const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
         shareModal.show();
         
         // Set up copy link button
         const copyLinkButton = document.getElementById('copyLinkButton');
-        const shareLinkInput = document.getElementById('shareLink');
-        
         copyLinkButton.onclick = () => {
             shareLinkInput.select();
             document.execCommand('copy');
