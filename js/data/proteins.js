@@ -195,7 +195,7 @@ const proteinsData = [
             antioxidants: 2
         },
         description: "Lean fish with high protein content and omega-3 fatty acids. Tuna supports heart health, aids weight management, and provides essential nutrients.",
-        image: "./img/data-food/8-protein.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 9,
@@ -243,7 +243,7 @@ const proteinsData = [
             antioxidants: 8
         },
         description: "Nutrient-dense nuts rich in healthy fats and vitamin E. Almonds support heart health, help manage weight, and benefit brain function.",
-        image: "./img/data-food/10-protein.jpg"
+        image: "./img/placeholder.png"
     },
     // Adding 10 more protein sources to reach 20 total
     {
@@ -364,7 +364,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Legumes rich in protein, healthy fats, and resveratrol. Peanuts provide sustained energy, support heart health, and may reduce cancer risk.",
-        image: "./img/data-food/15-protein.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 16,

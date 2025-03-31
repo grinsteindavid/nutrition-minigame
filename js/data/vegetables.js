@@ -388,7 +388,7 @@ const vegetablesData = [
             antioxidants: 6
         },
         description: "Purple nightshade vegetable rich in anthocyanins. Eggplants support heart health, help regulate blood sugar, and have antioxidant properties.",
-        image: "./img/data-food/16-vegetable.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 17,

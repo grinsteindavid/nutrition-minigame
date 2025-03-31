@@ -75,7 +75,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Fresh cheese curd product with a mild flavor and high protein content. Cottage cheese supports muscle building and provides essential nutrients.",
-        image: "./img/data-food/3-dairy.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 4,
@@ -195,7 +195,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Dairy product made from churned cream with high fat content. Butter contains fat-soluble vitamins and compounds that support hormone production.",
-        image: "./img/data-food/8-dairy.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 9,
@@ -219,7 +219,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Fermented dairy product with tangy flavor. Sour cream contains probiotics that can support digestive health and immune function.",
-        image: "./img/data-food/9-dairy.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 10,
@@ -243,7 +243,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Hard, aged cheese with intense flavor and high calcium content. Parmesan is one of the most nutrient-dense cheeses, supporting bone health.",
-        image: "./img/data-food/10-dairy.jpg"
+        image: "./img/placeholder.png"
     },
     // Adding 10 more dairy products to reach 20 total
     {
@@ -340,7 +340,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Tangy cheese made from goat's milk that's easier to digest for some people. Goat cheese contains fatty acids that may help reduce inflammation.",
-        image: "./img/data-food/14-dairy.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 15,

@@ -69,10 +69,9 @@ const fruitsData = [
             "magnesium": 0.6,
             "omega3": 0,
             "antioxidants": 9
-        ,
-        "image": "./img/data-food/3-fruit.jpg"},
-        "description": "Small but mighty berries with one of the highest antioxidant levels of common fruits. They support brain health and may improve memory.",
-        "image": "./img/data-food/3-fruit.jpg"
+        },
+        description: "Small but mighty berries with one of the highest antioxidant levels of common fruits. They support brain health and may improve memory.",
+        image: "./img/placeholder.png"
     },
     {
         "id": 4,
@@ -194,10 +193,9 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 8
-        ,
-        "image": "./img/data-food/8-fruit.jpg"},
+        },
         "description": "Small clusters of juicy berries rich in antioxidants like resveratrol. Grapes support heart health and may have anti-aging benefits.",
-        "image": "./img/data-food/8-fruit.jpg"
+        "image": "./img/placeholder.png"
     },
     {
         "id": 9,
@@ -394,10 +392,9 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 9
-        ,
-        "image": "./img/data-food/16-fruit.jpg"},
-        "description": "Ancient fruit with juicy seed arils rich in antioxidants. Pomegranates have anti-inflammatory properties and may help fight cancer and heart disease.",
-        "image": "./img/data-food/16-fruit.jpg"
+        },
+        description: "Ancient fruit with juicy seed arils rich in antioxidants. Pomegranates have anti-inflammatory properties and may help fight cancer and heart disease.",
+        image: "./img/placeholder.png"
     },
     {
         "id": 17,
@@ -419,10 +416,9 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 9
-        ,
-        "image": "./img/data-food/17-fruit.jpg"},
-        "description": "Dark berries with high fiber content and potent antioxidants. Blackberries support brain function, oral health, and may help manage diabetes.",
-        "image": "./img/data-food/17-fruit.jpg"
+        },
+        description: "Dark berries with high fiber content and potent antioxidants. Blackberries support brain function, oral health, and may help manage diabetes.",
+        image: "./img/placeholder.png"
     },
     {
         "id": 18,
@@ -444,8 +440,7 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 5
-        ,
-        "image": "./img/data-food/18-fruit.jpg"},
+        },
         "description": "Tropical fruit with enzyme papain that aids digestion. Papayas support immune function, reduce inflammation, and promote skin and eye health.",
         "image": "./img/data-food/18-fruit.jpg"
     },
@@ -494,10 +489,9 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 5
-        ,
-        "image": "./img/data-food/20-fruit.jpg"},
-        "description": "Tangy citrus fruit with cleansing and alkalizing properties. Lemons support detoxification, boost immunity, and aid in digestion and hydration.",
-        "image": "./img/data-food/20-fruit.jpg"
+        },
+        description: "Tangy citrus fruit with cleansing and alkalizing properties. Lemons support detoxification, boost immunity, and aid in digestion and hydration.",
+        image: "./img/placeholder.png"
     }
 ];
 

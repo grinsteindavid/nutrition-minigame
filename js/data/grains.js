@@ -27,7 +27,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Ancient grain that's actually a seed, containing all nine essential amino acids. Quinoa provides sustained energy and supports overall nutrition.",
-        image: "./img/data-food/1-grain.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Whole grain with outer bran layer intact, providing more nutrients than white rice. Brown rice supports digestive health and provides steady energy.",
-        image: "./img/data-food/2-grain.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 3,
@@ -75,7 +75,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Whole grain rich in beta-glucan fiber. Oats help lower cholesterol, stabilize blood sugar, and promote feelings of fullness.",
-        image: "./img/data-food/3-grain.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 4,
@@ -147,7 +147,7 @@ const grainsData = [
             antioxidants: 6
         },
         description: "Despite its name, buckwheat is not wheat but a seed related to rhubarb. Buckwheat is gluten-free and rich in minerals and antioxidants.",
-        image: "./img/data-food/6-grain.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 7,
@@ -219,7 +219,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Parboiled cracked wheat that cooks quickly. Bulgur has a low glycemic index and supports digestive health with its fiber content.",
-        image: "./img/data-food/9-grain.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 10,
