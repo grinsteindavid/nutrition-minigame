@@ -534,11 +534,63 @@ footer a:hover {
 }
 
 /* Social Share Buttons */
-.social-share-buttons .btn {
-    display: inline-flex;
+.social-share-buttons {
+    margin-bottom: 15px;
+}
+
+.btn-social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
+    color: white;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.btn-social:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    color: white;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+}
+
+.btn-twitter {
+    background-color: #000000;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.btn-pinterest {
+    background-color: #bd081c;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+}
+
+.btn-email {
+    background-color: #ea4335;
+}
+
+.btn-share {
+    background-color: #6c757d;
+}
+
+/* Make social buttons look better on mobile */
+@media (max-width: 576px) {
+    .btn-social {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
 }
 
 /* Share Foods List */

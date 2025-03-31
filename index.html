@@ -433,15 +433,21 @@
                         </div>
                     </div>
                     
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-4">
                         <input type="text" class="form-control" id="shareLink" value="https://nutrichoice.example.com/share?score=0" readonly>
                         <button class="btn btn-outline-secondary" type="button" id="copyLinkButton">Copy</button>
                     </div>
-                    <div class="social-share-buttons text-center">
-                        <button class="btn btn-primary me-2"><i class="fab fa-facebook-f"></i> Facebook</button>
-                        <button class="btn btn-info me-2"><i class="fab fa-twitter"></i> Twitter</button>
-                        <button class="btn btn-danger"><i class="fab fa-pinterest"></i> Pinterest</button>
+                    
+                    <h5 class="text-center mb-3">Share via:</h5>
+                    <div class="social-share-buttons d-flex flex-wrap justify-content-center gap-2 mb-2">
+                        <button id="facebookShareBtn" class="btn btn-social btn-facebook"><i class="fab fa-facebook-f"></i></button>
+                        <button id="twitterShareBtn" class="btn btn-social btn-twitter">𝕏</button>
+                        <button id="pinterestShareBtn" class="btn btn-social btn-pinterest"><i class="fab fa-pinterest"></i></button>
+                        <button id="whatsappShareBtn" class="btn btn-social btn-whatsapp"><i class="fab fa-whatsapp"></i></button>
+                        <button id="emailShareBtn" class="btn btn-social btn-email"><i class="fas fa-envelope"></i></button>
+                        <button id="nativeShareBtn" class="btn btn-social btn-share"><i class="fas fa-share-alt"></i></button>
                     </div>
+                    <p class="text-center text-muted small mt-2">Click any icon to share your meal results</p>
                 </div>
             </div>
         </div>

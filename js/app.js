@@ -688,15 +688,81 @@ document.addEventListener('DOMContentLoaded', () => {
         const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
         shareModal.show();
         
+        // Get full share URL and create title for social shares
+        const fullShareUrl = shareUrl.toString();
+        const shareTitle = `Check out my NutriChoice meal with a nutrition score of ${score}%!`;
+        const shareText = `I created a meal with ${game.selectedFoods.map(f => f.name).join(', ')} and scored ${score}%! Can you beat my score?`;
+        const shareImageUrl = game.selectedFoods[0]?.image || 'img/placeholder.png';
+        
         // Set up copy link button
         const copyLinkButton = document.getElementById('copyLinkButton');
         copyLinkButton.onclick = () => {
             shareLinkInput.select();
-            document.execCommand('copy');
+            navigator.clipboard.writeText(shareLinkInput.value).catch(() => {
+                // Fallback for older browsers
+                document.execCommand('copy');
+            });
             copyLinkButton.textContent = 'Copied!';
             setTimeout(() => {
                 copyLinkButton.textContent = 'Copy';
             }, 2000);
         };
+        
+        // Set up social share buttons
+        // Facebook
+        document.getElementById('facebookShareBtn').onclick = () => {
+            const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fullShareUrl)}`;
+            window.open(fbUrl, 'share-facebook', 'width=580,height=296');
+        };
+        
+        // X (formerly Twitter)
+        document.getElementById('twitterShareBtn').onclick = () => {
+            const xShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(fullShareUrl)}`;
+            window.open(xShareUrl, 'share-x', 'width=550,height=235');
+        };
+        
+        // Pinterest
+        document.getElementById('pinterestShareBtn').onclick = () => {
+            const pinterestUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(fullShareUrl)}&media=${encodeURIComponent(shareImageUrl)}&description=${encodeURIComponent(shareTitle)}`;
+            window.open(pinterestUrl, 'share-pinterest', 'width=750,height=550');
+        };
+        
+        // WhatsApp
+        document.getElementById('whatsappShareBtn').onclick = () => {
+            const isDesktop = !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+            const whatsappUrl = isDesktop 
+                ? `https://web.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + fullShareUrl)}`
+                : `whatsapp://send?text=${encodeURIComponent(shareText + ' ' + fullShareUrl)}`;
+            window.open(whatsappUrl, '_blank');
+        };
+        
+        // Email
+        document.getElementById('emailShareBtn').onclick = () => {
+            const subject = encodeURIComponent(shareTitle);
+            const body = encodeURIComponent(`${shareText}
+
+Check it out here: ${fullShareUrl}`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        };
+        
+        // Native Share API (for mobile devices)
+        const nativeShareBtn = document.getElementById('nativeShareBtn');
+        if (navigator.share) {
+            nativeShareBtn.style.display = 'block';
+            nativeShareBtn.onclick = async () => {
+                try {
+                    await navigator.share({
+                        title: shareTitle,
+                        text: shareText,
+                        url: fullShareUrl
+                    });
+                    console.log('Shared successfully');
+                } catch (err) {
+                    console.error('Share failed:', err);
+                }
+            };
+        } else {
+            nativeShareBtn.style.display = 'none';
+        }
     }
 });
