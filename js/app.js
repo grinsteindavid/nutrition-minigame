@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             foodItem.className = 'col-md-4 col-lg-3';
             foodItem.innerHTML = `
                 <div class="food-item" data-food-id="${food.id}" data-food-category="${food.category}">
-                    <img src="${food.image}" alt="${food.name}" class="food-image">
+                    <img src="${food.image}" alt="${food.name}" class="food-image" loading="lazy">
                     <div class="food-info">
                         <h3 class="food-name">${food.name}</h3>
                         <span class="food-category category-${food.category}">${food.category.charAt(0).toUpperCase() + food.category.slice(1)}</span>
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         modalBody.innerHTML = `
-            <img src="${food.image}" alt="${food.name}" class="food-modal-image">
+            <img src="${food.image}" alt="${food.name}" class="food-modal-image" loading="lazy">
             <p>${food.description}</p>
             <h4>Nutrition Facts</h4>
             <p><strong>Calories:</strong> ${food.calories}</p>
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
         foodElement.dataset.foodCategory = food.category;
         
         foodElement.innerHTML = `
-            <img src="${food.image}" alt="${food.name}" class="selected-food-image">
+            <img src="${food.image}" alt="${food.name}" class="selected-food-image" loading="lazy">
             <div class="selected-food-info">
                 <h4 class="selected-food-name">${food.name}</h4>
                 <span class="selected-food-category">${food.category.charAt(0).toUpperCase() + food.category.slice(1)}</span>

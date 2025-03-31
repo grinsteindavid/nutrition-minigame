@@ -12,23 +12,68 @@
     <meta property="og:url" content="https://grinsteindavid.github.io/nutrition-minigame/">
     <meta name="twitter:card" content="summary_large_image">
     <title>NutriChoice - Food Nutrition Minigame | Learn About Balanced Meals</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome - load asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Google Fonts - load efficiently -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="canonical" href="https://grinsteindavid.github.io/nutrition-minigame/">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Critical inline CSS for faster first contentful paint -->
+    <style>
+    /* Critical CSS only needed for initial render */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .bg-primary {
+        background-color: #0d6efd !important;
+    }
+    .text-white {
+        color: #fff !important;
+    }
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (min-width: 576px) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: 768px) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: 992px) {
+        .container {
+            max-width: 960px;
+        }
+    }
+    </style>
+
+    <!-- Google tag (gtag.js) - load non-blocking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWGDNDPCVK"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-SWGDNDPCVK');
     </script>
 </head>
@@ -368,16 +413,17 @@
     </div>
 
     <!-- Scripts -->
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <!-- Game Scripts -->
+    <!-- Bootstrap JS Bundle with Popper - defer loading -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Chart.js - defer loading since it's only needed for results -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+    <!-- Game Scripts - load module first -->
     <script type="module">
       import { foodData } from './js/data/index.js';
       window.foodData = foodData; // Make available globally for non-module scripts
     </script>
-    <script src="js/game.js"></script>
-    <script src="js/app.js?v=1.0.1"></script>
+    <!-- Critical game scripts - use defer to not block rendering -->
+    <script src="js/game.js" defer></script>
+    <script src="js/app.js?v=1.0.1" defer></script>
 </body>
 </html>
