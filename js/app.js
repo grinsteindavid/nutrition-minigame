@@ -344,6 +344,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update share score
         document.getElementById('shareScore').textContent = results.score;
         
+        // Update URL with selected foods (without score) to persist selection on page reload
+        updateUrlWithSelectedFoods();
+        
         // Display selected foods in results section
         displaySelectedFoodsInResults();
         
@@ -496,6 +499,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // If no foods parameter is present, do nothing
         if (!foodsParam) return;
         
+        // Note: We intentionally ignore the score parameter if present
+        // The score will always be calculated based on the selected foods
+        
         try {
             // Parse the foods data from the URL parameter - now includes category information
             // Format: id:category,id:category,id:category
@@ -630,6 +636,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
+     * Update the URL with selected foods
+     * This is used by both analyzeMeal and shareMeal functions
+     */
+    function updateUrlWithSelectedFoods() {
+        // Create a URL with food data as parameters (including both ID and category)
+        const foodParams = game.selectedFoods.map(food => `${food.id}:${food.category}`).join(',');
+        const shareUrl = new URL(window.location.href);
+        shareUrl.search = '';  // Clear existing query parameters
+        
+        // Add food data as query parameter (no score - it will be calculated)
+        shareUrl.searchParams.append('foods', foodParams);
+        
+        // Update the browser URL without reloading the page
+        window.history.replaceState({}, document.title, shareUrl);
+    }
+
+    /**
      * Share the meal results
      */
     function shareMeal() {
@@ -642,9 +665,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const shareUrl = new URL(window.location.href);
         shareUrl.search = '';  // Clear existing query parameters
         
-        // Add food data and score as query parameters
+        // Add only food data as query parameter (no score - it will be calculated)
         shareUrl.searchParams.append('foods', foodParams);
-        shareUrl.searchParams.append('score', score);
         
         // Update share score in the modal
         document.getElementById('shareScore').textContent = score;
