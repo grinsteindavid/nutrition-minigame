@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
      * Start the game by showing the game area and hiding instructions
      */
     function startGame() {
+        // Clean up URL querystring when starting the game
+        if (window.location.search) {
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+        
         instructionsSection.classList.add('d-none');
         gameAreaSection.classList.remove('d-none');
         resultsAreaSection.classList.add('d-none');
@@ -449,6 +455,12 @@ document.addEventListener('DOMContentLoaded', () => {
      * Reset the game to play again
      */
     function resetGame() {
+        // Clean up URL querystring when resetting the game
+        if (window.location.search) {
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+        
         game.reset();
         
         // Clear selected foods
@@ -502,8 +514,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // If we have valid foods, load them
             if (sharedFoods.length > 0) {
-                // Start the game to show the game area
-                startGame();
+                // Start the game to show the game area - but don't clean the URL yet
+                // We'll just show the game area but keep the URL parameters
+                instructionsSection.classList.add('d-none');
+                gameAreaSection.classList.remove('d-none');
+                resultsAreaSection.classList.add('d-none');
                 
                 // Add each food to the meal
                 sharedFoods.forEach(food => {
@@ -528,7 +543,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const sharedFoods = foodIds.map(id => foodData.find(food => food.id === id)).filter(food => food);
             
             if (sharedFoods.length > 0) {
-                startGame();
+                // Show the game area without cleaning the URL yet
+                instructionsSection.classList.add('d-none');
+                gameAreaSection.classList.remove('d-none');
+                resultsAreaSection.classList.add('d-none');
+                
                 sharedFoods.forEach(food => {
                     if (game.addFood(food)) {
                         addFoodToUI(food);

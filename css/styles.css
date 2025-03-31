@@ -606,4 +606,19 @@ footer a:hover {
     .share-food-item h5 {
         font-size: 0.8rem;
     }
+    
+    /* Make sure result action buttons stay on one line */
+    .result-actions-container {
+        width: 100%;
+    }
+    
+    .result-actions-container .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+    
+    .result-actions-container .btn i {
+        margin-right: 5px !important;
+    }
 }
