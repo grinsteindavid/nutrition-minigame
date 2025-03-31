@@ -90,6 +90,7 @@ header .lead {
 .tab-pane {
     max-height: 70vh; /* Limit height on larger screens */
     overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     padding-right: 5px; /* Space for scrollbar */
 }
 
@@ -117,6 +118,13 @@ header .lead {
     .tab-pane {
         max-height: 60vh; /* Slightly smaller on mobile */
     }
+}
+
+/* Prevent grid row overflow */
+.tab-pane .row {
+    margin-right: 0; /* Ensure no horizontal overflow */
+    margin-left: 0;
+    width: 100%;
 }
 
 .food-item {
