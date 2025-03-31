@@ -1,0 +1,13 @@
+{
+  "name": "nutri-choice",
+  "version": "1.0.0",
+  "description": "Nutrition education game app",
+  "main": "index.html",
+  "scripts": {
+    "download-images": "node scripts/fix-all-food-images.js",
+    "serve": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "axios": "1.6.2"
+  }
+}

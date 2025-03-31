@@ -27,7 +27,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Lean poultry meat high in protein and low in fat. Chicken breast supports muscle growth and provides essential B vitamins for energy.",
-        image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/1-protein.jpg"
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const proteinsData = [
             antioxidants: 4
         },
         description: "Fatty fish rich in omega-3 fatty acids and high-quality protein. Salmon reduces inflammation, supports brain health, and benefits heart health.",
-        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/2-protein.jpg"
     },
     {
         id: 3,
@@ -75,7 +75,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Nutrient-dense food rich in high-quality protein. Eggs contain all essential amino acids and important nutrients for brain development and eye health.",
-        image: "https://images.unsplash.com/photo-1551722699-1b6a3acc1b7b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 4,
@@ -99,7 +99,7 @@ const proteinsData = [
             antioxidants: 5
         },
         description: "Plant-based protein source rich in fiber and minerals. Lentils help stabilize blood sugar, support heart health, and provide sustained energy.",
-        image: "https://images.unsplash.com/photo-1611575619951-2ddb6c731e5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 5,
@@ -123,7 +123,7 @@ const proteinsData = [
             antioxidants: 8
         },
         description: "Nutrient-dense legumes rich in protein and fiber. Black beans support digestive health, provide steady energy, and contain antioxidants.",
-        image: "https://images.unsplash.com/photo-1590686910899-43ecd87ef617?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 6,
@@ -147,7 +147,7 @@ const proteinsData = [
             antioxidants: 3
         },
         description: "Versatile plant protein made from soybeans. Tofu is rich in isoflavones that may reduce heart disease risk and improve bone health.",
-        image: "https://images.unsplash.com/photo-1583495838052-7da01ba1b9b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 7,
@@ -171,7 +171,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Lean poultry meat rich in protein and B vitamins. Turkey supports muscle maintenance and provides tryptophan that helps with mood regulation.",
-        image: "https://images.unsplash.com/photo-1637169729356-5baf0a750a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 8,
@@ -195,7 +195,7 @@ const proteinsData = [
             antioxidants: 2
         },
         description: "Lean fish with high protein content and omega-3 fatty acids. Tuna supports heart health, aids weight management, and provides essential nutrients.",
-        image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/8-protein.jpg"
     },
     {
         id: 9,
@@ -219,7 +219,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Versatile legumes high in protein and fiber. Chickpeas help manage blood sugar, support digestive health, and provide sustainable energy.",
-        image: "https://images.unsplash.com/photo-1515543904379-3d757afe72e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 10,
@@ -243,7 +243,7 @@ const proteinsData = [
             antioxidants: 8
         },
         description: "Nutrient-dense nuts rich in healthy fats and vitamin E. Almonds support heart health, help manage weight, and benefit brain function.",
-        image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/10-protein.jpg"
     },
     // Adding 10 more protein sources to reach 20 total
     {
@@ -268,7 +268,7 @@ const proteinsData = [
             antioxidants: 2
         },
         description: "Red meat high in protein, iron, zinc, and B vitamins. Beef supports muscle growth, boosts energy levels, and contributes to immune function.",
-        image: "https://images.unsplash.com/photo-1603048297172-c92544798d5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/11-protein.jpg"
     },
     {
         id: 12,
@@ -292,7 +292,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Meat rich in thiamine and other B vitamins. Pork contributes to nerve function, energy metabolism, and muscle maintenance.",
-        image: "https://images.unsplash.com/photo-1600699899970-b1c9fadd8f9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/12-protein.jpg"
     },
     {
         id: 13,
@@ -316,7 +316,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Fermented soybean product with nutty flavor. Tempeh provides complete protein, probiotics for gut health, and helps reduce cholesterol.",
-        image: "https://images.unsplash.com/photo-1622626312933-dc3f10c17f83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 14,
@@ -340,7 +340,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Plant protein made from vital wheat gluten. Seitan has a meaty texture, extremely high protein content, and is versatile for many recipes.",
-        image: "https://images.unsplash.com/photo-1619103878216-4aaeb44dba2e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 15,
@@ -364,7 +364,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Legumes rich in protein, healthy fats, and resveratrol. Peanuts provide sustained energy, support heart health, and may reduce cancer risk.",
-        image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/15-protein.jpg"
     },
     {
         id: 16,
@@ -388,7 +388,7 @@ const proteinsData = [
             antioxidants: 3
         },
         description: "Low-calorie seafood with high protein content. Shrimp provides selenium for thyroid function, astaxanthin for skin health, and omega-3 fatty acids.",
-        image: "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/16-protein.jpg"
     },
     {
         id: 17,
@@ -412,7 +412,7 @@ const proteinsData = [
             antioxidants: 4
         },
         description: "Complete protein grain-like seed with all nine essential amino acids. Quinoa is gluten-free, supports digestive health, and provides steady energy.",
-        image: "https://images.unsplash.com/photo-1595445364671-15205e6c380c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/17-protein.jpg"
     },
     {
         id: 18,
@@ -436,7 +436,7 @@ const proteinsData = [
             antioxidants: 8
         },
         description: "Tree nuts with high omega-3 content and antioxidants. Walnuts support brain health, improve cognitive function, and reduce inflammation.",
-        image: "https://images.unsplash.com/photo-1563433005883-2839f8a4a321?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 19,
@@ -460,7 +460,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Strained yogurt with twice the protein of regular yogurt. Greek yogurt contains probiotics for gut health, supports muscle recovery, and strengthens bones.",
-        image: "https://images.unsplash.com/photo-1606881400491-84c10ca48909?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 20,
@@ -484,7 +484,7 @@ const proteinsData = [
             antioxidants: 6
         },
         description: "Tiny seeds with complete protein and optimal omega-3 to omega-6 ratio. Hemp seeds support heart health, reduce inflammation, and provide nutrients for muscle recovery.",
-        image: "https://images.unsplash.com/photo-1541689221366-d629326e7a7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     }
 ];
 

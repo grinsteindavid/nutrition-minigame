@@ -27,7 +27,7 @@ const vegetablesData = [
             antioxidants: 8
         },
         description: "Nutrient-dense cruciferous vegetable high in vitamins C and K. Broccoli contains compounds that may help prevent cancer and support detoxification.",
-        image: "https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/1-vegetable.jpg"
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const vegetablesData = [
             antioxidants: 9
         },
         description: "Leafy green vegetable packed with iron, calcium, and antioxidants. Spinach supports bone health, improves eye health, and boosts immunity.",
-        image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/2-vegetable.jpg"
     },
     {
         id: 3,
@@ -75,7 +75,7 @@ const vegetablesData = [
             antioxidants: 10
         },
         description: "Superfood leafy green that's loaded with nutrients. Kale is one of the most nutrient-dense foods on the planet, supporting overall health.",
-        image: "https://images.unsplash.com/photo-1610048899856-fb721d683cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 4,
@@ -99,7 +99,7 @@ const vegetablesData = [
             antioxidants: 7
         },
         description: "Orange root vegetables exceptionally high in beta-carotene. Carrots promote eye health, support immune function, and provide antioxidant benefits.",
-        image: "https://images.unsplash.com/photo-1598170845058-c2eec1a2f1f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 5,
@@ -123,7 +123,7 @@ const vegetablesData = [
             antioxidants: 8
         },
         description: "Colorful, crunchy vegetables with high vitamin C content. Bell peppers support skin health, boost immunity, and provide a variety of antioxidants.",
-        image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/5-vegetable.jpg"
     },
     {
         id: 6,
@@ -147,7 +147,7 @@ const vegetablesData = [
             antioxidants: 8
         },
         description: "Starchy root vegetable with vibrant orange flesh rich in beta-carotene. Sweet potatoes support eye and gut health while providing steady energy.",
-        image: "https://images.unsplash.com/photo-1596097635121-14b70a3ec63a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 7,
@@ -171,7 +171,7 @@ const vegetablesData = [
             antioxidants: 9
         },
         description: "Juicy fruits botanically, but culinary vegetables rich in lycopene. Tomatoes support heart health and have cancer-fighting properties.",
-        image: "https://images.unsplash.com/photo-1561136594-7f68413baa99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/7-vegetable.jpg"
     },
     {
         id: 8,
@@ -195,7 +195,7 @@ const vegetablesData = [
             antioxidants: 7
         },
         description: "Versatile cruciferous vegetable with impressive nutrient content. Cauliflower supports detoxification and has anti-inflammatory properties.",
-        image: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/8-vegetable.jpg"
     },
     {
         id: 9,
@@ -219,7 +219,7 @@ const vegetablesData = [
             antioxidants: 3
         },
         description: "Refreshing vegetable with high water content. Cucumbers help with hydration, digestion, and have cooling anti-inflammatory properties.",
-        image: "https://images.unsplash.com/photo-1568584711271-6c929fb49b60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/9-vegetable.jpg"
     },
     {
         id: 10,
@@ -243,7 +243,7 @@ const vegetablesData = [
             antioxidants: 9
         },
         description: "Potent herb with powerful medicinal properties. Garlic boosts immunity, reduces blood pressure, and has antimicrobial benefits.",
-        image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/10-vegetable.jpg"
     },
     // Adding 10 more vegetables to reach 20 total
     {
@@ -268,7 +268,7 @@ const vegetablesData = [
             antioxidants: 7
         },
         description: "Nutrient-dense spring vegetable with unique flavor. Asparagus supports digestive health, provides folate for cellular function, and acts as a natural diuretic.",
-        image: "https://images.unsplash.com/photo-1605291545263-2c459ad9a75b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 12,
@@ -292,7 +292,7 @@ const vegetablesData = [
             antioxidants: 9
         },
         description: "Mini cabbage-like cruciferous vegetables with sulfur compounds. Brussels sprouts support detoxification, reduce inflammation, and may protect against cancer.",
-        image: "https://images.unsplash.com/photo-1438118907704-7718ee9a191a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/12-vegetable.jpg"
     },
     {
         id: 13,
@@ -316,7 +316,7 @@ const vegetablesData = [
             antioxidants: 5
         },
         description: "Versatile summer squash with high water content. Zucchini supports healthy digestion, provides antioxidants, and has anti-inflammatory properties.",
-        image: "https://images.unsplash.com/photo-1587334207259-abe503a57c1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 14,
@@ -340,7 +340,7 @@ const vegetablesData = [
             antioxidants: 7
         },
         description: "Pungent bulb vegetable rich in sulfur compounds. Onions have antibacterial properties, support heart health, and may help control blood sugar levels.",
-        image: "https://images.unsplash.com/photo-1580201092675-a0a6a6cafbb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/14-vegetable.jpg"
     },
     {
         id: 15,
@@ -364,7 +364,7 @@ const vegetablesData = [
             antioxidants: 6
         },
         description: "Fungi with unique nutritional profile and umami flavor. Mushrooms support immune function, provide vitamin D, and have anti-inflammatory properties.",
-        image: "https://images.unsplash.com/photo-1552825896-a67eca653b49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 16,
@@ -388,7 +388,7 @@ const vegetablesData = [
             antioxidants: 6
         },
         description: "Purple nightshade vegetable rich in anthocyanins. Eggplants support heart health, help regulate blood sugar, and have antioxidant properties.",
-        image: "https://images.unsplash.com/photo-1640271443625-3276ed8f62b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/16-vegetable.jpg"
     },
     {
         id: 17,
@@ -412,7 +412,7 @@ const vegetablesData = [
             antioxidants: 7
         },
         description: "Cruciferous vegetable with anti-inflammatory properties. Cabbage supports digestive health, may lower cholesterol, and helps with detoxification.",
-        image: "https://images.unsplash.com/photo-1551898263-d0923fe533cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 18,
@@ -436,7 +436,7 @@ const vegetablesData = [
             antioxidants: 8
         },
         description: "Colorful root vegetables rich in nitrates and betalains. Beets support heart health, improve exercise performance, and have anti-inflammatory benefits.",
-        image: "https://images.unsplash.com/photo-1593105522588-3c5b83e47f96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 19,
@@ -460,7 +460,7 @@ const vegetablesData = [
             antioxidants: 9
         },
         description: "Thistle-like vegetable with one of the highest antioxidant contents. Artichokes support liver health, aid digestion, and may help lower cholesterol.",
-        image: "https://images.unsplash.com/photo-1548771272-8a79bcf73896?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 20,
@@ -484,7 +484,7 @@ const vegetablesData = [
             antioxidants: 6
         },
         description: "Crunchy stalks with high water content and minimal calories. Celery has anti-inflammatory compounds, supports digestion, and may help reduce blood pressure.",
-        image: "https://images.unsplash.com/photo-1594063596316-47f8bfcc5b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     }
 ];
 

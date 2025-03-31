@@ -27,7 +27,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Ancient grain that's actually a seed, containing all nine essential amino acids. Quinoa provides sustained energy and supports overall nutrition.",
-        image: "https://images.unsplash.com/photo-1595445364671-15205e6c380c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/1-grain.jpg"
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Whole grain with outer bran layer intact, providing more nutrients than white rice. Brown rice supports digestive health and provides steady energy.",
-        image: "https://images.unsplash.com/photo-1536304447766-da0ed4ce1b73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/2-grain.jpg"
     },
     {
         id: 3,
@@ -75,7 +75,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Whole grain rich in beta-glucan fiber. Oats help lower cholesterol, stabilize blood sugar, and promote feelings of fullness.",
-        image: "https://images.unsplash.com/photo-1471943311424-646960669fbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/3-grain.jpg"
     },
     {
         id: 4,
@@ -99,7 +99,7 @@ const grainsData = [
             antioxidants: 2
         },
         description: "Bread made from whole wheat flour containing all parts of the grain. Whole wheat bread provides more fiber and nutrients than refined bread.",
-        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/4-grain.jpg"
     },
     {
         id: 5,
@@ -123,7 +123,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Ancient grain with a chewy texture and nutty flavor. Barley helps regulate blood sugar, reduce cholesterol, and support digestive health.",
-        image: "https://images.unsplash.com/photo-1622697387883-3a807191c76b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 6,
@@ -147,7 +147,7 @@ const grainsData = [
             antioxidants: 6
         },
         description: "Despite its name, buckwheat is not wheat but a seed related to rhubarb. Buckwheat is gluten-free and rich in minerals and antioxidants.",
-        image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/6-grain.jpg"
     },
     {
         id: 7,
@@ -171,7 +171,7 @@ const grainsData = [
             antioxidants: 6
         },
         description: "Versatile grain that's technically a vegetable. Corn provides antioxidants lutein and zeaxanthin that support eye health and vision.",
-        image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/7-grain.jpg"
     },
     {
         id: 8,
@@ -195,7 +195,7 @@ const grainsData = [
             antioxidants: 2
         },
         description: "Pasta made from whole wheat flour with more fiber and nutrients than refined pasta. Whole grain pasta provides steady energy and better satiety.",
-        image: "https://images.unsplash.com/photo-1612966559832-f7bc6355084a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 9,
@@ -219,7 +219,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Parboiled cracked wheat that cooks quickly. Bulgur has a low glycemic index and supports digestive health with its fiber content.",
-        image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/9-grain.jpg"
     },
     {
         id: 10,
@@ -243,7 +243,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Small, gluten-free grain that's easily digestible. Millet can help lower blood sugar and cholesterol while providing protective antioxidants.",
-        image: "https://images.unsplash.com/photo-1586201375761-83865001e8c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     // Adding 10 more grains to reach 20 total
     {
@@ -268,7 +268,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Ancient pseudograin with complete protein and high lysine content. Amaranth supports bone health, reduces inflammation, and helps repair tissues.",
-        image: "https://images.unsplash.com/photo-1623227866629-f3ade2a55255?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 12,
@@ -292,7 +292,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Grain with high fiber content that keeps you feeling full longer. Rye has a lower glycemic index than wheat and may help with weight management.",
-        image: "https://images.unsplash.com/photo-1603278162557-a808f47d3698?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 13,
@@ -316,7 +316,7 @@ const grainsData = [
             antioxidants: 3
         },
         description: "Ancient Mediterranean grain with nutty flavor and chewy texture. Farro is high in fiber and protein, supports heart health, and aids in digestion.",
-        image: "https://images.unsplash.com/photo-1587486935022-e184e9cd761f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 14,
@@ -340,7 +340,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Ancient wheat variety with more nutrients and less gluten than modern wheat. Spelt supports immune function and helps with energy production.",
-        image: "https://images.unsplash.com/photo-1644913966719-c72d6177f3ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 15,
@@ -364,7 +364,7 @@ const grainsData = [
             antioxidants: 4
         },
         description: "Tiny grain with high mineral content and resistant starch. Teff helps manage blood sugar, supports bone health, and aids in digestion.",
-        image: "https://images.unsplash.com/photo-1631209121750-a9f656d28f56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 16,
@@ -388,7 +388,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Aquatic grass seed with more protein and fewer carbs than other rice varieties. Wild rice has antioxidant activity and supports heart health.",
-        image: "https://images.unsplash.com/photo-1595436301907-0cc869327c9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 17,
@@ -412,7 +412,7 @@ const grainsData = [
             antioxidants: 7
         },
         description: "Ancient grain that's naturally gluten-free with antioxidant properties. Sorghum helps maintain healthy gut microbiome and stabilizes blood sugar.",
-        image: "https://images.unsplash.com/photo-1651963598398-adfce47761ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 18,
@@ -436,7 +436,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Young green wheat that's harvested and roasted for a smoky flavor. Freekeh has more protein and fiber than mature wheat and supports eye health.",
-        image: "https://images.unsplash.com/photo-1578596247451-9c441a4c5c21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 19,
@@ -460,7 +460,7 @@ const grainsData = [
             antioxidants: 5
         },
         description: "Ancient wheat variety with larger grains and more nutrients. Kamut has anti-inflammatory properties and may be easier to digest than modern wheat.",
-        image: "https://images.unsplash.com/photo-1635188557555-55a7226fc3c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 20,
@@ -484,7 +484,7 @@ const grainsData = [
             antioxidants: 9
         },
         description: "Nutrient-rich outer layer of rice grain that's removed to make white rice. Rice bran contains antioxidants and may help lower cholesterol and blood pressure.",
-        image: "https://images.unsplash.com/photo-1509836511624-c73757e8e497?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     }
 ];
 

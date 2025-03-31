@@ -19,9 +19,10 @@ const fruitsData = [
             "magnesium": 0.5,
             "omega3": 0,
             "antioxidants": 7
-        },
+        ,
+        "image": "./img/data-food/1-fruit.jpg"},
         "description": "A crisp, sweet fruit that's high in fiber and vitamin C. Apples contain antioxidants that may help reduce the risk of chronic diseases.",
-        "image": "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/1-fruit.jpg"
     },
     {
         "id": 2,
@@ -43,9 +44,10 @@ const fruitsData = [
             "magnesium": 5.8,
             "omega3": 0,
             "antioxidants": 4
-        },
+        ,
+        "image": "./img/data-food/2-fruit.jpg"},
         "description": "An energy-packed fruit rich in potassium and vitamin B6. Bananas support heart health and provide sustained energy for physical activity.",
-        "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/2-fruit.jpg"
     },
     {
         "id": 3,
@@ -67,9 +69,10 @@ const fruitsData = [
             "magnesium": 0.6,
             "omega3": 0,
             "antioxidants": 9
-        },
+        ,
+        "image": "./img/data-food/3-fruit.jpg"},
         "description": "Small but mighty berries with one of the highest antioxidant levels of common fruits. They support brain health and may improve memory.",
-        "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/3-fruit.jpg"
     },
     {
         "id": 4,
@@ -91,9 +94,10 @@ const fruitsData = [
             "magnesium": 7.1,
             "omega3": 0.1,
             "antioxidants": 6
-        },
+        ,
+        "image": "./img/data-food/4-fruit.jpg"},
         "description": "A nutrient-dense fruit rich in healthy fats, fiber, and potassium. Avocados support heart health and help with nutrient absorption.",
-        "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/4-fruit.jpg"
     },
     {
         "id": 5,
@@ -115,9 +119,10 @@ const fruitsData = [
             "magnesium": 1.0,
             "omega3": 0,
             "antioxidants": 7
-        },
+        ,
+        "image": "./img/data-food/5-fruit.jpg"},
         "description": "Juicy citrus fruit known for its high vitamin C content. Oranges support immune function and skin health with their antioxidant properties.",
-        "image": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/5-fruit.jpg"
     },
     {
         "id": 6,
@@ -139,9 +144,10 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 8
-        },
+        ,
+        "image": "./img/data-food/6-fruit.jpg"},
         "description": "Sweet berries that are packed with vitamin C and antioxidants. Strawberries support heart health and have anti-inflammatory properties.",
-        "image": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/6-fruit.jpg"
     },
     {
         "id": 7,
@@ -163,9 +169,10 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 7
-        },
+        ,
+        "image": "./img/data-food/7-fruit.jpg"},
         "description": "Tropical fruit rich in vitamins A and C. Mangoes support eye health and immunity while providing a sweet, tropical flavor.",
-        "image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/7-fruit.jpg"
     },
     {
         "id": 8,
@@ -187,9 +194,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 8
-        },
+        ,
+        "image": "./img/data-food/8-fruit.jpg"},
         "description": "Small clusters of juicy berries rich in antioxidants like resveratrol. Grapes support heart health and may have anti-aging benefits.",
-        "image": "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/8-fruit.jpg"
     },
     {
         "id": 9,
@@ -211,9 +219,10 @@ const fruitsData = [
             "magnesium": 3,
             "omega3": 0,
             "antioxidants": 7
-        },
+        ,
+        "image": "./img/data-food/9-fruit.jpg"},
         "description": "Small fruit with fuzzy skin and bright green flesh, packed with vitamin C. Kiwis support immune health and aid in digestion.",
-        "image": "https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/9-fruit.jpg"
     },
     {
         "id": 10,
@@ -235,9 +244,10 @@ const fruitsData = [
             "magnesium": 3,
             "omega3": 0,
             "antioxidants": 6
-        },
+        ,
+        "image": "./img/data-food/10-fruit.jpg"},
         "description": "Tropical fruit with sweet-tart flavor and enzyme bromelain. Pineapples aid digestion and have anti-inflammatory properties.",
-        "image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/10-fruit.jpg"
     },
     {
         "id": 11,
@@ -259,9 +269,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 5
-        },
+        ,
+        "image": "./img/data-food/11-fruit.jpg"},
         "description": "Hydrating summer fruit with high water content. Watermelon contains lycopene and citrulline that support heart health and exercise recovery.",
-        "image": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/11-fruit.jpg"
     },
     {
         "id": 12,
@@ -283,9 +294,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 6
-        },
+        ,
+        "image": "./img/data-food/12-fruit.jpg"},
         "description": "Sweet, juicy stone fruit rich in antioxidants. Peaches support skin health, aid digestion, and may help reduce allergy symptoms.",
-        "image": "https://images.unsplash.com/photo-1595743825637-cdafc8ad4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/12-fruit.jpg"
     },
     {
         "id": 13,
@@ -307,9 +319,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 4
-        },
+        ,
+        "image": "./img/data-food/13-fruit.jpg"},
         "description": "Mild, sweet fruit with high fiber content. Pears support digestive health, regulate blood sugar, and provide vitamins C and K.",
-        "image": "https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/13-fruit.jpg"
     },
     {
         "id": 14,
@@ -331,9 +344,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 8
-        },
+        ,
+        "image": "./img/data-food/14-fruit.jpg"},
         "description": "Small stone fruits rich in antioxidants and anti-inflammatory compounds. Cherries may help reduce muscle pain, improve sleep, and support heart health.",
-        "image": "https://images.unsplash.com/photo-1528821128474-27f963b062bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/14-fruit.jpg"
     },
     {
         "id": 15,
@@ -355,9 +369,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 7
-        },
+        ,
+        "image": "./img/data-food/15-fruit.jpg"},
         "description": "Tangy citrus fruit with potent antioxidants. Grapefruit may help with weight management, insulin resistance, and heart health.",
-        "image": "https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/15-fruit.jpg"
     },
     {
         "id": 16,
@@ -379,9 +394,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 9
-        },
+        ,
+        "image": "./img/data-food/16-fruit.jpg"},
         "description": "Ancient fruit with juicy seed arils rich in antioxidants. Pomegranates have anti-inflammatory properties and may help fight cancer and heart disease.",
-        "image": "https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/16-fruit.jpg"
     },
     {
         "id": 17,
@@ -403,9 +419,10 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 9
-        },
+        ,
+        "image": "./img/data-food/17-fruit.jpg"},
         "description": "Dark berries with high fiber content and potent antioxidants. Blackberries support brain function, oral health, and may help manage diabetes.",
-        "image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/17-fruit.jpg"
     },
     {
         "id": 18,
@@ -427,9 +444,10 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 5
-        },
+        ,
+        "image": "./img/data-food/18-fruit.jpg"},
         "description": "Tropical fruit with enzyme papain that aids digestion. Papayas support immune function, reduce inflammation, and promote skin and eye health.",
-        "image": "https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/18-fruit.jpg"
     },
     {
         "id": 19,
@@ -451,9 +469,10 @@ const fruitsData = [
             "magnesium": 2,
             "omega3": 0,
             "antioxidants": 8
-        },
+        ,
+        "image": "./img/data-food/19-fruit.jpg"},
         "description": "Delicate berries with sweet-tart flavor and high fiber content. Raspberries have anti-aging properties and support heart health and blood sugar control.",
-        "image": "https://images.unsplash.com/photo-1577069861033-55d04cec4ef5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/19-fruit.jpg"
     },
     {
         "id": 20,
@@ -475,9 +494,10 @@ const fruitsData = [
             "magnesium": 1,
             "omega3": 0,
             "antioxidants": 5
-        },
+        ,
+        "image": "./img/data-food/20-fruit.jpg"},
         "description": "Tangy citrus fruit with cleansing and alkalizing properties. Lemons support detoxification, boost immunity, and aid in digestion and hydration.",
-        "image": "https://images.unsplash.com/photo-1587815073078-f636169821e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "image": "./img/data-food/20-fruit.jpg"
     }
 ];
 

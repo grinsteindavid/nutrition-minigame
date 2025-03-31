@@ -27,7 +27,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Strained yogurt with higher protein content than regular yogurt. Greek yogurt supports gut health with probiotics and helps with muscle recovery.",
-        image: "https://images.unsplash.com/photo-1606881400491-84c10ca48909?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 2,
@@ -51,7 +51,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Nutrient-rich liquid food rich in calcium and vitamin D. Milk supports bone health and provides complete protein with all essential amino acids.",
-        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/2-dairy.jpg"
     },
     {
         id: 3,
@@ -75,7 +75,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Fresh cheese curd product with a mild flavor and high protein content. Cottage cheese supports muscle building and provides essential nutrients.",
-        image: "https://images.unsplash.com/photo-1568901839119-631418a3910d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/3-dairy.jpg"
     },
     {
         id: 4,
@@ -99,7 +99,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Aged hard cheese with rich flavor and high calcium content. Cheddar cheese helps strengthen bones and provides high-quality protein.",
-        image: "https://images.unsplash.com/photo-1618164435735-413d3b066c9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/4-dairy.jpg"
     },
     {
         id: 5,
@@ -123,7 +123,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Fermented milk drink with more probiotic strains than yogurt. Kefir improves gut health, boosts immunity, and can help with lactose digestion.",
-        image: "https://images.unsplash.com/photo-1594143913366-d0389934aee8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 6,
@@ -147,7 +147,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Fresh cheese with high moisture content and mild flavor. Mozzarella provides calcium for bone health while being lower in sodium than many cheeses.",
-        image: "https://images.unsplash.com/photo-1588010254798-5a138aeef89c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 7,
@@ -171,7 +171,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Whey cheese with creamy texture and mild flavor. Ricotta is rich in protein while being lower in salt and fat than many other cheese types.",
-        image: "https://images.unsplash.com/photo-1551460188-2dace9f2fed3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 8,
@@ -195,7 +195,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Dairy product made from churned cream with high fat content. Butter contains fat-soluble vitamins and compounds that support hormone production.",
-        image: "https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/8-dairy.jpg"
     },
     {
         id: 9,
@@ -219,7 +219,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Fermented dairy product with tangy flavor. Sour cream contains probiotics that can support digestive health and immune function.",
-        image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/9-dairy.jpg"
     },
     {
         id: 10,
@@ -243,7 +243,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Hard, aged cheese with intense flavor and high calcium content. Parmesan is one of the most nutrient-dense cheeses, supporting bone health.",
-        image: "https://images.unsplash.com/photo-1528747045269-390fe33c19f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/10-dairy.jpg"
     },
     // Adding 10 more dairy products to reach 20 total
     {
@@ -268,7 +268,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Soft, spreadable cheese with mild flavor and smooth texture. Cream cheese provides calcium and protein while adding richness to dishes.",
-        image: "https://images.unsplash.com/photo-1618281377501-b327dfcee015?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 12,
@@ -292,7 +292,7 @@ const dairyData = [
             antioxidants: 2
         },
         description: "Strong-flavored cheese with blue-green mold throughout. Blue cheese contains probiotics that support gut health and may have anti-inflammatory properties.",
-        image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/12-dairy.jpg"
     },
     {
         id: 13,
@@ -316,7 +316,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Crumbly aged cheese traditionally made from sheep's or goat's milk. Feta is lower in calories and fat than many cheeses while providing calcium and protein.",
-        image: "https://images.unsplash.com/photo-1626957341926-98752fc2ba90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/13-dairy.jpg"
     },
     {
         id: 14,
@@ -340,7 +340,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Tangy cheese made from goat's milk that's easier to digest for some people. Goat cheese contains fatty acids that may help reduce inflammation.",
-        image: "https://images.unsplash.com/photo-1471102204080-fe99e6db4ef0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/14-dairy.jpg"
     },
     {
         id: 15,
@@ -364,7 +364,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Soft cheese with edible white rind and creamy interior. Brie provides calcium, protein, and vitamins while being rich in flavor.",
-        image: "https://images.unsplash.com/photo-1634487359989-3e90c9432133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/15-dairy.jpg"
     },
     {
         id: 16,
@@ -388,7 +388,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Liquid dairy product that is half milk and half cream. Half and half provides a moderate amount of fat and calories while adding richness to coffee and recipes.",
-        image: "https://images.unsplash.com/photo-1628193479368-6209995a3c52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 17,
@@ -412,7 +412,7 @@ const dairyData = [
             antioxidants: 1
         },
         description: "Firm cheese with distinctive holes and nutty flavor. Swiss cheese is high in calcium and lower in sodium than many other cheeses.",
-        image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/17-dairy.jpg"
     },
     {
         id: 18,
@@ -436,7 +436,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Cream that's been beaten to incorporate air and increase volume. Whipped cream provides fat-soluble vitamins in a light, airy texture.",
-        image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/data-food/18-dairy.jpg"
     },
     {
         id: 19,
@@ -460,7 +460,7 @@ const dairyData = [
             antioxidants: 0
         },
         description: "Creamy Italian cheese with high fat content and smooth texture. Mascarpone adds richness to desserts and savory dishes while providing fat-soluble vitamins.",
-        image: "https://images.unsplash.com/photo-1486778603116-bbc55d2de086?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     },
     {
         id: 20,
@@ -484,7 +484,7 @@ const dairyData = [
             antioxidants: 2
         },
         description: "Clarified butter with milk solids removed, resulting in higher smoke point. Ghee contains butyrate that supports gut health and may reduce inflammation.",
-        image: "https://images.unsplash.com/photo-1612200181635-e32d7d3f2166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+        image: "./img/placeholder.png"
     }
 ];
 
