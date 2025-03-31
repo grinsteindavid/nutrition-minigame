@@ -292,7 +292,7 @@ const proteinsData = [
             antioxidants: 1
         },
         description: "Meat rich in thiamine and other B vitamins. Pork contributes to nerve function, energy metabolism, and muscle maintenance.",
-        image: "./img/data-food/12-protein.jpg"
+        image: "./img/placeholder.png"
     },
     {
         id: 13,
