@@ -239,7 +239,12 @@
                 <div class="col-lg-6">
                     <div class="card mb-4">
                         <div class="card-header bg-success text-white">
-                            <h3 class="mb-0">Nutrients You've Covered</h3>
+                            <h3 class="mb-0 d-flex align-items-center">
+                                Nutrients You've Covered
+                                <span class="info-tooltip ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Nutrients that meet at least 30% of your daily requirements are considered covered.">
+                                    <i class="fas fa-question-circle"></i>
+                                </span>
+                            </h3>
                         </div>
                         <div class="card-body">
                             <ul id="coveredNutrients" class="nutrient-list covered-list">
@@ -252,7 +257,12 @@
                 <div class="col-lg-6">
                     <div class="card mb-4">
                         <div class="card-header bg-danger text-white">
-                            <h3 class="mb-0">Nutrients You're Missing</h3>
+                            <h3 class="mb-0 d-flex align-items-center">
+                                Nutrients You're Missing
+                                <span class="info-tooltip ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Nutrients that provide less than 30% of your daily requirements are considered missing.">
+                                    <i class="fas fa-question-circle"></i>
+                                </span>
+                            </h3>
                         </div>
                         <div class="card-body">
                             <ul id="missingNutrients" class="nutrient-list missing-list">

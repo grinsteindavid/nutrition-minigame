@@ -419,6 +419,24 @@ header .lead {
     background-color: var(--bg-fiber);
 }
 
+/* Info Tooltip */
+.info-tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+}
+
+.info-tooltip i {
+    color: #8ce0ed;  /* Info blue color */
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.info-tooltip:hover i {
+    color: white;
+}
+
 /* Nutrition Facts */
 .info-card {
     border: none;

@@ -363,6 +363,12 @@ document.addEventListener('DOMContentLoaded', () => {
             coveredNutrientsList.appendChild(listItem);
         });
         
+        // Re-initialize tooltips after content changes
+        if (typeof bootstrap !== 'undefined') {
+            const newTooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+            newTooltips.forEach(tooltip => new bootstrap.Tooltip(tooltip));
+        }
+        
         // Display missing nutrients
         const missingNutrientsList = document.getElementById('missingNutrients');
         missingNutrientsList.innerHTML = '';
