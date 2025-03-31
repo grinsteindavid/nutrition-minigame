@@ -299,6 +299,59 @@ header .lead {
     position: relative;
 }
 
+/* Selected Foods in Results Section */
+.selected-foods-results {
+    width: 100%;
+}
+
+.results-food-item {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-food-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.results-food-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.results-food-name {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+.results-food-category {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.results-food-calories {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.view-details-btn {
+    margin-top: auto;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
 .score-circle span:last-child {
     font-size: 1.5rem;
     position: absolute;
@@ -462,6 +515,44 @@ footer a:hover {
     min-width: 120px;
 }
 
+/* Share Foods List */
+.share-foods-container {
+    background-color: rgba(76, 175, 80, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.share-foods-container h5 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.share-food-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.share-food-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.share-food-item h5 {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.share-food-item .badge {
+    font-size: 0.7rem;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -490,5 +581,29 @@ footer a:hover {
     .score-circle span:last-child {
         font-size: 1.2rem;
         right: 30px;
+    }
+    
+    /* Mobile adjustments for results food items */
+    .results-food-image {
+        height: 100px;
+    }
+    
+    .results-food-name {
+        font-size: 0.95rem;
+    }
+    
+    .view-details-btn {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    /* Mobile adjustments for share food items */
+    .share-food-image {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .share-food-item h5 {
+        font-size: 0.8rem;
     }
 }

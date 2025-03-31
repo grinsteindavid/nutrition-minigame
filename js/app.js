@@ -337,7 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Update share score
         document.getElementById('shareScore').textContent = results.score;
-        document.getElementById('shareLink').value = `https://nutrichoice.example.com/share?score=${results.score}`;
+        
+        // Display selected foods in results section
+        displaySelectedFoodsInResults();
         
         // Display covered nutrients
         const coveredNutrientsList = document.getElementById('coveredNutrients');
@@ -482,35 +484,132 @@ document.addEventListener('DOMContentLoaded', () => {
         // If no foods parameter is present, do nothing
         if (!foodsParam) return;
         
-        // Parse the food IDs from the URL parameter
-        const foodIds = foodsParam.split(',').map(id => parseInt(id));
-        
-        // Find the matching food objects
-        const sharedFoods = foodIds.map(id => foodData.find(food => food.id === id)).filter(food => food);
-        
-        // If we have valid foods, load them
-        if (sharedFoods.length > 0) {
-            // Start the game to show the game area
-            startGame();
-            
-            // Add each food to the meal
-            sharedFoods.forEach(food => {
-                if (game.addFood(food)) {
-                    addFoodToUI(food);
-                }
+        try {
+            // Parse the foods data from the URL parameter - now includes category information
+            // Format: id:category,id:category,id:category
+            const foodSelections = foodsParam.split(',').map(item => {
+                const [id, category] = item.split(':');
+                return { id: parseInt(id), category };
             });
             
-            // Update UI to reflect selected foods
-            updateSelectionCount();
-            updateFoodItemsSelection();
+            // Find the matching food objects by both id and category
+            const sharedFoods = foodSelections.map(selection => {
+                return foodData.find(food => 
+                    food.id === selection.id && 
+                    food.category === selection.category
+                );
+            }).filter(food => food); // Remove any undefined entries
             
-            // If we have a full meal selection, show the analysis
-            if (game.selectedFoods.length === game.maxSelections) {
-                analyzeMeal();
+            // If we have valid foods, load them
+            if (sharedFoods.length > 0) {
+                // Start the game to show the game area
+                startGame();
+                
+                // Add each food to the meal
+                sharedFoods.forEach(food => {
+                    if (game.addFood(food)) {
+                        addFoodToUI(food);
+                    }
+                });
+                
+                // Update UI to reflect selected foods
+                updateSelectionCount();
+                updateFoodItemsSelection();
+                
+                // If we have a full meal selection, show the analysis
+                if (game.selectedFoods.length === game.maxSelections) {
+                    analyzeMeal();
+                }
+            }
+        } catch (error) {
+            console.error('Error parsing shared meal parameters:', error);
+            // Fallback to old format (backwards compatibility)
+            const foodIds = foodsParam.split(',').map(id => parseInt(id));
+            const sharedFoods = foodIds.map(id => foodData.find(food => food.id === id)).filter(food => food);
+            
+            if (sharedFoods.length > 0) {
+                startGame();
+                sharedFoods.forEach(food => {
+                    if (game.addFood(food)) {
+                        addFoodToUI(food);
+                    }
+                });
+                updateSelectionCount();
+                updateFoodItemsSelection();
+                
+                if (game.selectedFoods.length === game.maxSelections) {
+                    analyzeMeal();
+                }
             }
         }
     }
     
+    /**
+     * Display selected foods in the results section
+     */
+    function displaySelectedFoodsInResults() {
+        const selectedFoodsResults = document.getElementById('selectedFoodsResults');
+        if (!selectedFoodsResults) return;
+        
+        selectedFoodsResults.innerHTML = '';
+        
+        // Create a row for the selected foods
+        const foodsRow = document.createElement('div');
+        foodsRow.className = 'row justify-content-center mb-3';
+        
+        // Add each food to the results view
+        game.selectedFoods.forEach(food => {
+            const foodCol = document.createElement('div');
+            foodCol.className = 'col-md-4 col-sm-6 mb-3 text-center';
+            
+            foodCol.innerHTML = `
+                <div class="results-food-item" data-food-id="${food.id}" data-food-category="${food.category}">
+                    <img src="${food.image}" alt="${food.name}" class="results-food-image" loading="lazy">
+                    <h4 class="results-food-name">${food.name}</h4>
+                    <span class="results-food-category category-${food.category}">
+                        ${food.category.charAt(0).toUpperCase() + food.category.slice(1)}
+                    </span>
+                    <p class="results-food-calories"><i class="fas fa-fire"></i> ${food.calories} calories</p>
+                    <button class="btn btn-sm btn-outline-primary view-details-btn">View Details</button>
+                </div>
+            `;
+            
+            // Add click event to show food details
+            const viewDetailsBtn = foodCol.querySelector('.view-details-btn');
+            viewDetailsBtn.addEventListener('click', () => showFoodInfo(food));
+            
+            foodsRow.appendChild(foodCol);
+        });
+        
+        selectedFoodsResults.appendChild(foodsRow);
+    }
+
+    /**
+     * Also display selected foods in the share modal
+     */
+    function displaySelectedFoodsInShareModal() {
+        const shareFoodsList = document.getElementById('shareFoodsList');
+        if (!shareFoodsList) return;
+        
+        shareFoodsList.innerHTML = '';
+        
+        // Add each food to the share modal
+        game.selectedFoods.forEach(food => {
+            const foodItem = document.createElement('div');
+            foodItem.className = 'share-food-item d-flex align-items-center mb-2';
+            
+            foodItem.innerHTML = `
+                <img src="${food.image}" alt="${food.name}" class="share-food-image me-2" loading="lazy">
+                <div>
+                    <h5 class="mb-0">${food.name}</h5>
+                    <span class="badge category-${food.category}">${food.category.charAt(0).toUpperCase() + food.category.slice(1)}</span>
+                </div>
+            `;
+            
+            shareFoodsList.appendChild(foodItem);
+        });
+    }
+
     /**
      * Share the meal results
      */
@@ -519,17 +618,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const scoreResult = game.calculateScore();
         const score = Math.round(scoreResult.score);
         
-        // Create a URL with food IDs as parameters
-        const foodIds = game.selectedFoods.map(food => food.id).join(',');
+        // Create a URL with food data as parameters (including both ID and category)
+        const foodParams = game.selectedFoods.map(food => `${food.id}:${food.category}`).join(',');
         const shareUrl = new URL(window.location.href);
         shareUrl.search = '';  // Clear existing query parameters
         
-        // Add food IDs and score as query parameters
-        shareUrl.searchParams.append('foods', foodIds);
+        // Add food data and score as query parameters
+        shareUrl.searchParams.append('foods', foodParams);
         shareUrl.searchParams.append('score', score);
         
         // Update share score in the modal
         document.getElementById('shareScore').textContent = score;
+        
+        // Display selected foods in the share modal
+        displaySelectedFoodsInShareModal();
         
         // Update share link input
         const shareLinkInput = document.getElementById('shareLink');
