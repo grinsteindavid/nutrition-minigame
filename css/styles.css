@@ -81,6 +81,44 @@ header .lead {
 }
 
 /* Food Selection Area */
+/* Tab content scrollable container */
+.tab-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-pane {
+    max-height: 70vh; /* Limit height on larger screens */
+    overflow-y: auto;
+    padding-right: 5px; /* Space for scrollbar */
+}
+
+/* Custom scrollbar styling for better UX */
+.tab-pane::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tab-pane::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.tab-pane::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.tab-pane::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+    .tab-pane {
+        max-height: 60vh; /* Slightly smaller on mobile */
+    }
+}
+
 .food-item {
     background-color: white;
     border-radius: 12px;
