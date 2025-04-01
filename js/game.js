@@ -112,17 +112,23 @@ class NutritionGame {
             }, 0);
         });
 
-        // Calculate percentage of targets met
+        // Calculate percentage of targets met, assuming this is one of three daily meals
+        // We'll scale by a factor of 3 to make a more realistic score, but cap at 100%
         const percentageMet = {};
+        const mealScaleFactor = 3; // Assuming 3 meals per day
         Object.keys(this.nutrientTargets).forEach(nutrient => {
-            percentageMet[nutrient] = Math.min(100, Math.round((totalNutrients[nutrient] / this.nutrientTargets[nutrient]) * 100));
+            // Scale the percentage by the meal factor but cap at 100%
+            percentageMet[nutrient] = Math.min(100, Math.round((totalNutrients[nutrient] / this.nutrientTargets[nutrient]) * 100 * mealScaleFactor));
         });
 
         // Determine covered and missing nutrients
+        // We'll adjust the threshold to be more realistic for a single meal
         const coveredNutrients = [];
         const missingNutrients = [];
+        const coverageThreshold = 30; // This threshold applies to the already-scaled percentages
+        
         Object.keys(percentageMet).forEach(nutrient => {
-            if (percentageMet[nutrient] >= 30) {
+            if (percentageMet[nutrient] >= coverageThreshold) {
                 coveredNutrients.push({
                     name: nutrient,
                     percentage: percentageMet[nutrient]
@@ -143,11 +149,21 @@ class NutritionGame {
 
         // Calculate macronutrient breakdown
         const totalCalories = this.selectedFoods.reduce((total, food) => total + food.calories, 0);
+        
+        // Calculate macros using the same percentage of daily recommended value approach 
+        // and apply the same scaling as with other nutrients (assuming this is one meal of three)
         const macros = {
+            protein: Math.min(100, Math.round((totalNutrients.protein / this.nutrientTargets.protein) * 100 * mealScaleFactor)),
+            carbs: Math.min(100, Math.round((totalNutrients.carbs / this.nutrientTargets.carbs) * 100 * mealScaleFactor)),
+            fat: Math.min(100, Math.round((totalNutrients.fat / this.nutrientTargets.fat) * 100 * mealScaleFactor)),
+            fiber: Math.min(100, Math.round((totalNutrients.fiber / this.nutrientTargets.fiber) * 100 * mealScaleFactor))
+        };
+        
+        // Also store traditional macronutrient ratios for reference (as % of calories)
+        const macroRatios = {
             protein: Math.round((totalNutrients.protein * 4 / totalCalories) * 100),
             carbs: Math.round((totalNutrients.carbs * 4 / totalCalories) * 100),
-            fat: Math.round((totalNutrients.fat * 9 / totalCalories) * 100),
-            fiber: Math.round((totalNutrients.fiber / this.nutrientTargets.fiber) * 100)
+            fat: Math.round((totalNutrients.fat * 9 / totalCalories) * 100)
         };
 
         // Update high score if needed
@@ -163,7 +179,8 @@ class NutritionGame {
             coveredNutrients: coveredNutrients,
             missingNutrients: missingNutrients,
             percentageMet: percentageMet,
-            macros: macros
+            macros: macros,
+            macroRatios: macroRatios
         };
     }
 
