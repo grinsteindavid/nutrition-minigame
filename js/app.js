@@ -403,8 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsAreaSection.classList.remove('d-none');
     }
     
-    /**
-     * Create a radar chart visualizing the nutrient coverage
+   /**
+     * Create a visually enhanced radar chart visualizing the nutrient coverage
      * @param {Object} percentageMet - Object with nutrient percentages
      */
     function createNutrientChart(percentageMet) {
@@ -421,43 +421,252 @@ document.addEventListener('DOMContentLoaded', () => {
             'calcium', 'iron', 'potassium', 'magnesium'
         ];
         
+        // Define color theme - using solid colors instead of gradients for compatibility
+        const primaryColor = 'rgba(65, 105, 225, 0.7)';
+        const secondaryColor = 'rgba(255, 105, 180, 0.3)';
+        
+        // Define data categories and color-code them
+        const macronutrients = ['Protein', 'Carbs', 'Fat', 'Fiber'];
+        const vitamins = ['Vitamin A', 'Vitamin C'];
+        const minerals = ['Calcium', 'Iron', 'Potassium', 'Magnesium'];
+        
+        // Format labels with category indicators
+        const formattedLabels = keyNutrients.map(nutrient => {
+            const name = game.formatNutrientName(nutrient);
+            if (macronutrients.includes(name)) return `🍲 ${name}`;
+            if (vitamins.includes(name)) return `🍊 ${name}`;
+            if (minerals.includes(name)) return `⚡ ${name}`;
+            return name;
+        });
+        
+        // Get nutrient percentages and determine if each is at a good level
+        const nutrientValues = keyNutrients.map(nutrient => percentageMet[nutrient]);
+        
+        // Create border color array that highlights nutrients based on percentages
+        const pointBorderColors = nutrientValues.map(value => {
+            if (value >= 80) return '#4CAF50'; // Good coverage
+            if (value >= 40) return '#FFC107'; // Moderate coverage
+            return '#F44336'; // Poor coverage
+        });
+        
+        // Create point background colors
+        const pointBackgroundColors = nutrientValues.map(value => {
+            if (value >= 80) return 'rgba(76, 175, 80, 0.8)'; // Good coverage
+            if (value >= 40) return 'rgba(255, 193, 7, 0.8)'; // Moderate coverage
+            return 'rgba(244, 67, 54, 0.8)'; // Poor coverage
+        });
+        
         const data = {
-            labels: keyNutrients.map(nutrient => game.formatNutrientName(nutrient)),
+            labels: formattedLabels,
             datasets: [{
                 label: 'Nutrient Coverage (%)',
-                data: keyNutrients.map(nutrient => percentageMet[nutrient]),
+                data: nutrientValues,
                 fill: true,
-                backgroundColor: 'rgba(76, 175, 80, 0.2)',
-                borderColor: 'rgba(76, 175, 80, 1)',
-                pointBackgroundColor: 'rgba(76, 175, 80, 1)',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(76, 175, 80, 1)'
+                backgroundColor: secondaryColor,
+                borderColor: primaryColor,
+                borderWidth: 3,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                pointBackgroundColor: pointBackgroundColors,
+                pointBorderColor: pointBorderColors,
+                pointBorderWidth: 2,
+                pointHoverBackgroundColor: 'rgba(255, 255, 255, 0.9)',
+                pointHoverBorderColor: primaryColor
             }]
         };
+        
+        // Create a reference line at 50% for better visual guidance
+        const referenceDataset = {
+            label: '50% Reference',
+            data: Array(keyNutrients.length).fill(50),
+            fill: false,
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            borderColor: 'rgba(255, 255, 255, 0.5)',
+            borderWidth: 1,
+            borderDash: [5, 5],
+            pointRadius: 0,
+            pointHoverRadius: 0
+        };
+        
+        // Add the reference dataset
+        data.datasets.push(referenceDataset);
         
         const config = {
             type: 'radar',
             data: data,
             options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 1000,
+                    easing: 'easeOutQuart'
+                },
                 scales: {
                     r: {
                         angleLines: {
-                            display: true
+                            display: true,
+                            color: 'rgba(255, 255, 255, 0.15)',
+                            lineWidth: 1
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            display: false  // Hide numeric labels
+                        },
+                        pointLabels: {
+                            color: '#333',
+                            font: {
+                                size: 13,
+                                weight: 'bold',
+                                family: '"Poppins", sans-serif'
+                            },
+                            padding: 10
                         },
                         suggestedMin: 0,
-                        suggestedMax: 100
+                        suggestedMax: 100,
+                        beginAtZero: true
                     }
                 },
-                elements: {
-                    line: {
-                        borderWidth: 3
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14,
+                                family: '"Poppins", sans-serif'
+                            },
+                            usePointStyle: true,
+                            generateLabels: (chart) => {
+                                // Only show legend for the main dataset
+                                const datasets = chart.data.datasets;
+                                return [{
+                                    text: datasets[0].label,
+                                    fillStyle: primaryColor,
+                                    strokeStyle: primaryColor,
+                                    lineWidth: 2,
+                                    hidden: false
+                                }];
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold',
+                            family: '"Poppins", sans-serif'
+                        },
+                        bodyFont: {
+                            size: 13,
+                            family: '"Poppins", sans-serif'
+                        },
+                        padding: 10,
+                        cornerRadius: 6,
+                        displayColors: false,
+                        callbacks: {
+                            title: (tooltipItems) => {
+                                return tooltipItems[0].label.replace(/^[🍲🍊⚡]\s/, '');
+                            },
+                            label: (context) => {
+                                // Don't show tooltip for reference dataset
+                                if (context.datasetIndex === 1) return null;
+                                
+                                const value = context.raw;
+                                let status = '';
+                                if (value >= 80) status = '✅ Good coverage';
+                                else if (value >= 40) status = '⚠️ Moderate coverage';
+                                else status = '❌ Poor coverage';
+                                
+                                return [`Value: ${value.toFixed(1)}%`, status, 'Click for nutrition tips'];
+                            }
+                        }
+                    }
+                },
+                onClick: (e, elements) => {
+                    if (elements && elements.length > 0 && elements[0].datasetIndex === 0) {
+                        const index = elements[0].index;
+                        const nutrient = keyNutrients[index].toLowerCase();
+                        showNutrientTip(nutrient, formattedLabels[index]);
                     }
                 }
-            },
+            }
         };
         
         window.nutrientChart = new Chart(ctx, config);
+    }
+    
+    /**
+     * Display nutrition tips for the clicked nutrient
+     * @param {string} nutrient - The nutrient identifier
+     * @param {string} label - The formatted nutrient name
+     */
+    function showNutrientTip(nutrient, label) {
+        // Remove emoji from label if present
+        const cleanLabel = label.replace(/^[🍲🍊⚡]\s/, '');
+        
+        // Define tips for different nutrients
+        const tips = {
+            protein: ['Lean meats, poultry, fish, eggs, dairy, beans, and nuts are great protein sources',
+                    'Distribute protein throughout the day for optimal muscle maintenance'],
+            carbs: ['Focus on complex carbs like whole grains, fruits, and vegetables',
+                   'Limit refined carbs like white bread, pasta, and sugary foods'],
+            fat: ['Include healthy fats from avocados, nuts, olive oil, and fatty fish',
+                 'Limit saturated fats from processed foods and fried items'],
+            fiber: ['Increase intake of fruits, vegetables, whole grains, and legumes',
+                  'Drink plenty of water when increasing fiber intake'],
+            vitamina: ['Orange and yellow vegetables like carrots and sweet potatoes are rich in vitamin A',
+                     'Leafy greens like spinach and kale are also excellent sources'],
+            vitaminc: ['Citrus fruits, berries, peppers, and broccoli are high in vitamin C',
+                     'Eat these foods raw when possible as vitamin C is heat-sensitive'],
+            calcium: ['Dairy products, fortified plant milks, leafy greens, and nuts provide calcium',
+                    'Vitamin D helps with calcium absorption, so get some sunlight too'],
+            iron: ['Red meat, spinach, beans, and fortified cereals are good iron sources',
+                 'Consume with vitamin C foods to improve absorption'],
+            potassium: ['Bananas, potatoes, avocados, and leafy greens are high in potassium',
+                      'Helps maintain healthy blood pressure and muscle function'],
+            magnesium: ['Nuts, seeds, whole grains, and leafy greens provide magnesium',
+                      'Important for energy production and muscle health']
+        };
+        
+        // Get tips for the selected nutrient
+        const nutrientKey = nutrient.toLowerCase().replace(/[^a-z]/g, '');
+        const nutrientTips = tips[nutrientKey] || ['Focus on a varied diet to get this nutrient'];
+        
+        // Create and show a toast notification
+        const toastHtml = `
+            <div class="toast-container position-fixed bottom-0 end-0 p-3" id="nutrientTipContainer">
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header bg-primary text-white">
+                        <strong class="me-auto">${cleanLabel} Tips</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        <ul class="mb-0 ps-3">
+                            ${nutrientTips.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Remove any existing toast container
+        const existingContainer = document.getElementById('nutrientTipContainer');
+        if (existingContainer) {
+            existingContainer.remove();
+        }
+        
+        // Add the new toast to the document
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = toastHtml;
+        document.body.appendChild(tempDiv.firstElementChild);
+        
+        // Show the toast
+        const toastEl = document.querySelector('.toast');
+        const toast = new bootstrap.Toast(toastEl, { autohide: true, delay: 5000 });
+        toast.show();
     }
     
     /**
